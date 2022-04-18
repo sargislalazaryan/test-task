@@ -3,14 +3,14 @@ import {useSelector, useDispatch} from 'react-redux';
 
 // import components
 import ModalWindow from '../../components/modal';
-import UserCard from "./UserCard";
+import UserCard from './UserCard';
 
 // import action creators
 import {returnUserToReview} from '../../store/userSlice';
-import {closeModal} from "../../store/modalSlice";
+import {closeModal} from '../../store/modalSlice';
 
 // import selectors
-import {modal} from "../../selectors/modal";
+import {modal} from '../../selectors/modal';
 
 import {
     ReviewedListBox,
@@ -23,8 +23,8 @@ import {
 import {IUser} from './index';
 
 import {TEXT} from '../../constants/texts';
-import {NEGATIVE, POSITIVE} from "../../constants/app";
-import {USER_MOVING_CONFIRMATION} from "../../constants/modal";
+import {NEGATIVE, POSITIVE} from '../../constants/app';
+import {USER_MOVING_CONFIRMATION} from '../../constants/modal';
 
 interface IReviewedListProps {
     users: IUser[]
@@ -47,7 +47,6 @@ const ReviewedList = ({users}: IReviewedListProps) => {
     }, [dispatch]);
 
     const handleConfirm = useCallback(() => {
-        // @ts-ignore
         const {id} = modalData.data;
         dispatch(returnUserToReview({id}));
         dispatch(closeModal())

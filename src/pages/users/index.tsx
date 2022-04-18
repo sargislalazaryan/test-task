@@ -3,14 +3,14 @@ import {useDispatch, useSelector} from 'react-redux';
 
 // import components
 import LayoutContainer from '../../components/layoutContainer';
-import InReviewList from "./InReviewList";
-import ReviewedList from "./ReviewedList";
+import InReviewList from './InReviewList';
+import ReviewedList from './ReviewedList';
 
 // import action creators
 import {fetchUsers} from '../../store/userSlice';
 
 // import selectors
-import {allUsersWithoutRating, allUsersWithRating} from "../../selectors/user";
+import {allUsersWithoutRating, allUsersWithRating} from '../../selectors/user';
 
 import {UsersBox} from './users.styled';
 import {MAIN_WHITE, ScreenSizes} from '../../constants/styles';

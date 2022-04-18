@@ -1,16 +1,17 @@
 import * as React from 'react';
 import {useSelector} from 'react-redux';
 
-// import selectors
-import {modal} from "../../selectors/modal";
-
+// import components
+import ButtonMUI from "../button";
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+
+// import selectors
+import {modal} from '../../selectors/modal';
 
 import {ModalBox, ModalControls} from "./modal.styled";
 
 import {TEXT} from '../../constants/texts';
-import ButtonMUI from "../button";
 
 interface IModalWindowProps {
     reasonForMatch: string;

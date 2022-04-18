@@ -1,9 +1,10 @@
 import React from 'react';
 
-import {IconWrapper, ControllerBox} from "./incrementDecrementController.styled";
-
+// import components
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
+
+import {IconWrapper, ControllerBox} from './incrementDecrementController.styled';
 
 interface IIncrementDecrementControllerProps {
     handleIncrementRating: () => void;

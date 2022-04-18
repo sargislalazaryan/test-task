@@ -1,7 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {HomeBox, SectionItem, SectionItemBorder, SectionItemWrapper, Title} from "./home.styled";
+
+// import components
 import LayoutContainer from '../../components/layoutContainer';
+
+import {
+    HomeBox,
+    SectionItem,
+    SectionItemBorder,
+    SectionItemWrapper,
+    Title
+} from "./home.styled";
 import {ScreenSizes} from '../../constants/styles';
 
 const Home = () => {

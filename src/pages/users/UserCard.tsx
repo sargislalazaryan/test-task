@@ -1,12 +1,13 @@
 import React, {useCallback} from 'react';
-import {useDispatch} from "react-redux";
+import {useDispatch} from 'react-redux';
 
 // import components
 import IncrementDecrementController from '../../components/incDecController';
-import RemoveController from "../../components/removeController";
+import RemoveController from '../../components/removeController';
 
 // import action creators
 import {changeRating, returnUserToReview} from '../../store/userSlice';
+import {openModal} from '../../store/modalSlice';
 
 import {
     ControllersWrapper,
@@ -14,15 +15,14 @@ import {
     Info,
     InfoBox,
     UserCardBox,
-} from "./users.styled";
+} from './users.styled';
 
 // import types
-import {IUser} from "./index";
+import {IUser} from './index';
 
-import {DECREMENT, INCREMENT, MAX_RATING, MIN_RATING} from "../../constants/app";
-import {openModal} from "../../store/modalSlice";
-import {TEXT} from "../../constants/texts";
-import {USER_MOVING_CONFIRMATION} from "../../constants/modal";
+import {DECREMENT, INCREMENT, MAX_RATING, MIN_RATING} from '../../constants/app';
+import {TEXT} from '../../constants/texts';
+import {USER_MOVING_CONFIRMATION} from '../../constants/modal';
 
 interface IUserProps {
     user: IUser

@@ -4,8 +4,8 @@ import Button from '@mui/material/Button';
 
 interface IButtonMUIProps {
     title: string;
-    color: string;
-    variant: string;
+    color: 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning';
+    variant: 'text' | 'outlined' | 'contained';
     handleClick: () => void
 }
 
@@ -14,7 +14,7 @@ const ButtonMUI = ({
                        color,
                        variant,
                        handleClick,
-                   }: any) => {
+                   }: IButtonMUIProps) => {
     return (
         <Stack direction="row" spacing={2}>
             <Button

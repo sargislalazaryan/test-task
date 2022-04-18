@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// import components
 import LayoutContainer from '../layoutContainer';
+
 import {HeaderBox, HeaderWrapper, Logo, UserAuth} from './header.styled';
 import {ScreenSizes} from '../../constants/styles';
 

@@ -5,7 +5,7 @@ interface IInitialState {
     title: string,
     text: string,
     reason: string,
-    data: Object,
+    data: {[key: string]: string},
 }
 
 const initialState = {
@@ -13,7 +13,7 @@ const initialState = {
     title: '',
     text: '',
     reason: '',
-    data: {},
+    data: {} as {[key: string]: string},
 }
 
 const modalSlice = createSlice({

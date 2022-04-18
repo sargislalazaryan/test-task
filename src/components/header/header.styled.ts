@@ -1,11 +1,9 @@
 import styled from '@emotion/styled';
+
 import {MAIN_GREEN} from '../../constants/styles';
-// @ts-ignore
+
 import logoImg from '../../assets/images/logo.png';
-
-// @ts-ignore
 import userImg from '../../assets/images/user.png';
-
 
 export const HeaderWrapper = styled.div`
   width: 100%;

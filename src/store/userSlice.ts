@@ -1,7 +1,7 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
 
-import {requestURI} from "../configs";
+import {requestURI} from '../configs';
 import {
     DECREMENT,
     INCREMENT,
@@ -13,11 +13,17 @@ import {
 } from '../constants/app';
 
 // import types
-import {IUser} from "../pages/users";
+import {IUser} from '../pages/users';
 
 interface IFetchUsersProps {
     page?: number,
     loadMore?: boolean
+}
+
+interface IInitialState {
+    list: IUser[];
+    status: string,
+    error: string,
 }
 
 export const fetchUsers = createAsyncThunk(
@@ -31,12 +37,6 @@ export const fetchUsers = createAsyncThunk(
         }
     }
 );
-
-interface IInitialState {
-    list: IUser[];
-    status: string,
-    error: string,
-}
 
 const userSlice = createSlice({
     name: 'users',
@@ -76,9 +76,8 @@ const userSlice = createSlice({
                 state.status = PENDING;
                 state.error = '';
             })
-            .addCase(fetchUsers.fulfilled, (state: IInitialState, action: any) => {
-                const isLoadMore = action.meta.arg.loadMore;
-                const users = action.payload.map((user: IUser) => {
+            .addCase(fetchUsers.fulfilled, (state: IInitialState, {payload, meta: {arg: {loadMore}}}: any) => {
+                const users = payload.map((user: IUser) => {
                     return {
                         ...user,
                         rating: 0,
@@ -86,7 +85,7 @@ const userSlice = createSlice({
                     }
                 })
                 state.status = RESOLVED;
-                state.list = isLoadMore ? [...state.list, ...users] : users;
+                state.list = loadMore ? [...state.list, ...users] : users;
 
             })
             .addCase(fetchUsers.rejected, (state: IInitialState, {payload}: any) => {

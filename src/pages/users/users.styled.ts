@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import {MAIN_BG, MAIN_WHITE} from "../../constants/styles";
+import {MAIN_BG, MAIN_WHITE} from '../../constants/styles';
 
 export const UsersBox = styled.div`
   width: 100%;
@@ -42,14 +42,16 @@ export const Info = styled.div`
     margin-top: 12px;
   }
 `
-export const Image = styled.div(({imgSrc}: any) => ({
-    width: '60px',
-    height: '60px',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundImage: `url(${imgSrc})`,
-    backgroundColor: MAIN_BG,
-}))
+export const Image = styled.div(({imgSrc}: { [key: string]: string }) => {
+    return ({
+        width: '60px',
+        height: '60px',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundImage: `url(${imgSrc})`,
+        backgroundColor: MAIN_BG,
+    });
+})
 
 export const ControllersWrapper = styled.div`
   display: flex;

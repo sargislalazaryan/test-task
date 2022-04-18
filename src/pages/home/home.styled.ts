@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import {MAIN_GREEN} from '../../constants/styles';
 
-// @ts-ignore
 import usersImg from '../../assets/images/users.png';
 
 export const HomeBox = styled.div`
