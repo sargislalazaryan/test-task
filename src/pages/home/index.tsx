@@ -1,33 +1,30 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-
-// import components
-import LayoutContainer from '../../components/layoutContainer';
-
+import { MultiSelectFC } from '../../components/multiSelect'
 import {
-    HomeBox,
-    SectionItem,
-    SectionItemBorder,
-    SectionItemWrapper,
-    Title
-} from "./home.styled";
-import {ScreenSizes} from '../../constants/styles';
+    HomeWrapper,
+    MultiSelectsWrapper,
+    Title,
+} from './Home.styled'
 
-const Home = () => {
-    return (
-        <LayoutContainer mw={ScreenSizes.md}>
-            <HomeBox>
-                <Link to={'/users'}>
-                    <SectionItemWrapper>
-                        <SectionItemBorder>
-                            <SectionItem/>
-                        </SectionItemBorder>
-                        <Title>USERS</Title>
-                    </SectionItemWrapper>
-                </Link>
-            </HomeBox>
-        </LayoutContainer>
-    )
+import { useGetUsersQuery } from '../../store/users/users.api'
+
+
+export interface IUser {
+    id: number,
+    name: string,
 }
 
-export default Home;
+export const Home = () => {
+    const { isLoading, data = [] } = useGetUsersQuery()
+
+    return (
+        <HomeWrapper>
+            <Title>HOME PAGE</Title>
+            <MultiSelectsWrapper>
+                {isLoading
+                    ? <h2>Please wait, loading...</h2>
+                    : <MultiSelectFC options={data} />
+                }
+            </MultiSelectsWrapper>
+        </HomeWrapper>
+    )
+}

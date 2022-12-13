@@ -1,37 +1,24 @@
-import styled from '@emotion/styled';
-import {MAIN_GREEN} from '../../constants/styles';
+import styled from 'styled-components'
 
-import usersImg from '../../assets/images/users.png';
-
-export const HomeBox = styled.div`
-  display: flex;
-  flex-flow: wrap;
+export const HomeWrapper = styled.div`
+  width: 1000px;
+  height: 500px;
+  margin: auto;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #D9D9D9;
+  box-shadow: 0 0 4px #D9D9D9;
+  font-family: 'Arial';
 `
 
-export const SectionItemWrapper = styled.div`
-  &:hover {
-    opacity: .7;
-    transition: 0.15s;
-  }
-`
-
-export const Title = styled.h3`
-  color: ${MAIN_GREEN};
+export const Title = styled.h1`
+  width: 100%;
   text-align: center;
-  margin-top: 10px;
+  color: #111111;
 `
 
-export const SectionItemBorder = styled.div`
-  padding: 10px;
-  border: 2px solid ${MAIN_GREEN};
-  border-radius: 10px;
-`
-
-export const SectionItem = styled.div`
-  width: 120px;
-  height: 120px;
-  background-image: url(${usersImg});
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+export const MultiSelectsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
 `
